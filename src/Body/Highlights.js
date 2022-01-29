@@ -1,3 +1,4 @@
+import React from 'react';
 export const Highlights=()=>{
     return(<div>
         <High/>
@@ -93,32 +94,59 @@ const MayImg=()=><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn
 :ANd9GcTxttsR6WZfNjRsDjmdLACen2DkaNiDrb6jHA&usqp=CAU" className="May-Img"/>
 const MayPara=()=><p className="May-Para-size">The pros and cons of Business agency</p>
 const MayDate=()=><p className="May-Date">May17,2021</p>
+//const Icons=()=>{
+  //  return(<div className="Icon-flex-high">
+  //          <FaceFull/>
+    //        <InstFull/>
+     //       <TubeFull/>
+    //</div>);
+//};
+
 const Icons=()=>{
-    return(<div className="Icon-flex-high">
-            <FaceFull/>
-            <InstFull/>
-            <TubeFull/>
-    </div>);
+    return React.createElement('div',{className:"Icon-flex-high"},<FaceFull/>,
+            <InstFull/>,
+            <TubeFull/>)
 };
 
-const TubeFull=()=>{return( <div className="Tube-center">
-         <TubeIcon/>  
-         <TubeNum/>
-        <TubePara/>
-        </div>);};
 
-const FaceFull=()=>{return( <div className="Face-icon">
-          <FaceIcon/> 
-        <FaceNum/>
-        <FaceFans/>
-        </div>);};
-const InstFull=()=>{return(
-     <div className="Inst-center">
-          <InstIcon/> 
-         <InstNum/>
-        <InstFollow/>
-        </div>
-);};
+//const TubeFull=()=>{return( <div className="Tube-center">
+  //       <TubeIcon/>  
+  //       <TubeNum/>
+  //      <TubePara/>
+  //      </div>);};
+
+const TubeFull=()=>{
+    return React.createElement('div',{className:"Tube-center"}, <TubeIcon/>,
+         <TubeNum/>,
+        <TubePara/>)
+};
+
+
+//const FaceFull=()=>{return( <div className="Face-icon">
+  //        <FaceIcon/> 
+    //    <FaceNum/>
+    //    <FaceFans/>
+    //    </div>);};
+
+const FaceFull=()=>{
+    return React.createElement('div',{className:"Face-icon"},  <FaceIcon/> ,
+        <FaceNum/>,
+        <FaceFans/>)
+};
+
+//const InstFull=()=>{return(
+  //   <div className="Inst-center">
+  //        <InstIcon/> 
+  //       <InstNum/>
+  //      <InstFollow/>
+  //      </div>
+//);};
+
+const InstFull=()=>{
+    return React.createElement('div',{className:"Inst-center"},<InstIcon/> ,
+         <InstNum/>,
+        <InstFollow/>)
+};
 
 const MidTechnology=()=>{
     return(<div className="border-Mid-Tech">
@@ -182,12 +210,18 @@ const Photography=()=>{
     </div>);
 }
 
+//const FullLoadPost=()=>{
+  //  return(<div className="Load-flex-margin">
+    //    <LoadPost/>
+      //  <LoadIcon/>
+    //</div>);
+//};
+
 const FullLoadPost=()=>{
-    return(<div className="Load-flex-margin">
-        <LoadPost/>
-        <LoadIcon/>
-    </div>);
-};
+    return React.createElement('div',{ className:"Load-flex-margin"}, <LoadPost/>,
+        <LoadIcon/>)
+}
+
 
 
 const SideMay=()=>{
@@ -240,18 +274,24 @@ const NewsView=()=>{
     </div>);
 };
 
-const NewsContant=()=>{
-    return(<div>
-        <div className="flex-contant-news">
-            <NewsMark/>
-            <NewsPhoto/>
-            <NewsTravelOne/>
-            <NewsTravelOne/>
+//const NewsContant=()=>{
+  //  return(<div>
+    //    <div className="flex-contant-news">
+      //      <NewsMark/>
+        //    <NewsPhoto/>
+          //  <NewsTravelOne/>
+            //<NewsTravelOne/>
             
-        </div>
-    </div>);
-};
+       // </div>
+    //</div>);
+//};
 
+const NewsContant=()=>{
+    return React.createElement('div',{},React.createElement('div',{className:"flex-contant-news"}, <NewsMark/>,
+            <NewsPhoto/>,
+            <NewsTravelOne/>,
+            <NewsTravelOne/>))
+};
 
 
 const High=()=>{

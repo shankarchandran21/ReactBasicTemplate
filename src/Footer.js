@@ -1,11 +1,22 @@
+import React from "react";
+
 export const Footer=()=>{
-    return(<div className="Border-full-color">
-        <FooterFull/>
-        <FullLast/>
-    </div>);
+    return React.createElement('div',{className:"Border-full-color"}, <FooterFull/>,
+        <FullLast/>)
 };
-const Blogzinecontent=()=><BlogzinePara/>
-const BlogzineH1=()=><h1>blogzine</h1>;
+//const Footer=()=>{
+  //  return(<div className="Border-full-color">
+    //    <FooterFull/>
+      //  <FullLast/>
+   // </div>);
+//};
+
+
+
+//<BlogzinePara/>
+const Blogzinecontent=()=>React.createElement(BlogzinePara,{},'null')
+const BlogzineH1=()=>React.createElement('h1',{},'blogzine')
+//<h1>blogzine</h1>;
 const BlogzineIcon=()=><i class="fas fa-quote-left"></i>;
 const BlogzinePara=()=><p className="Blogzine-para">The next-generation blog, news, and magazine theme for you to start sharing your stories today!
      This Bootstrap 5 based theme is ideal for all types of sites that deliver the news.</p>
@@ -51,12 +62,19 @@ const Terms=()=><p className="margin-term">Terms</p>;
 const Privacy=()=><p className="margin-privacy">Privacy</p>
 const Cookies=()=><p className="Margin-cookies">Cookies</p>
 
+//const FooterFull=()=>{
+  //  return(<div className="centerfooter">
+    //            <BlogzineFull/>
+      //          <FooterMid/>
+    //</div>);
+//};
+
 const FooterFull=()=>{
-    return(<div className="centerfooter">
-                <BlogzineFull/>
-                <FooterMid/>
-    </div>);
+    return React.createElement('div',{className:"centerfooter"},
+                <BlogzineFull/>,
+                <FooterMid/>);
 };
+
 const BlogzineFull=()=>{
     return(<div>
         <div className="flex-blogzine">
@@ -78,19 +96,34 @@ const EmailSubUnder=()=>{
     </div>);
 };
 
-const BlogzineFooter=()=>{
-    return(<div className="flex-icon-blogzine">
-        <BlogzineIcon/>
+//const BlogzineFooter=()=>{
+  //  return(<div className="flex-icon-blogzine">
+    //    <BlogzineIcon/>
         <BlogzineH1/>
-    </div>);
+    //</div>);
+//};
+
+const BlogzineFooter=()=>{
+    return React.createElement('div',{className:"flex-icon-blogzine"},
+     <BlogzineIcon/>,
+        <BlogzineH1/>
+    );
 };
 
+
+//const EmailAndSub=()=>{
+  //  return(<div className="flex-emailsub">
+    //    <Email/>
+      //  <Sub/>
+    //</div>);
+//}
+
 const EmailAndSub=()=>{
-    return(<div className="flex-emailsub">
-        <Email/>
-        <Sub/>
-    </div>);
-}
+    return React.createElement('div',{ className:"flex-emailsub"},
+    <Email/>,
+        <Sub/>);
+};
+
 const Email=()=><p className="email-box">Enter your email address</p>
 const Sub=()=><p className="Sub-border">Subscribe</p>
 
@@ -107,99 +140,184 @@ const FooterMid=()=>{
         </div>
     </div>);
 };
+//const MainHeading=()=>{
+  //  return(<div className="flex-Main-H">
+    //    <Post/>
+      //  <Navigation/>
+        //<Updates/>
+        //<MobileApp/>
+    //</div>);
+//};
+
 const MainHeading=()=>{
-    return(<div className="flex-Main-H">
-        <Post/>
-        <Navigation/>
-        <Updates/>
-        <MobileApp/>
-    </div>);
+    return React.createElement('div',{className:"flex-Main-H"},
+     <Post/>,
+        <Navigation/>,
+        <Updates/>,
+        <MobileApp/>,
+    )
 };
 
-
-const SubHeading=()=>{return(<div className="flex-sub-H">
+//const SubHeading=()=>{return(<div className="flex-sub-H">
             
-                <BusinessUnder/>
-                <FeaturesSubUnder/>
-                <NewsSubUnder/>
-                <WhatsAppFullUnder/>
-                <MobilePara/>
-</div>);};
+  //              <BusinessUnder/>
+    //            <FeaturesSubUnder/>
+      //          <NewsSubUnder/>
+        //        <WhatsAppFullUnder/>
+          //      <MobilePara/>
+//</div>);};
+
+const SubHeading=()=>{
+    return React.createElement('div',{className:"flex-sub-H"},
+     <BusinessUnder/>,
+                <FeaturesSubUnder/>,
+                <NewsSubUnder/>,
+                <WhatsAppFullUnder/>,
+                <MobilePara/>,
+    );
+};
+
+//const BusinessUnder=()=>{
+  //  return(<div className="width-full-business">
+    //    <BusinessSub/>
+      //  < BusiPara/>
+        // <BusinessSub/>
+        //< BusiPara/>
+    //</div>);
+//};
 
 const BusinessUnder=()=>{
-    return(<div className="width-full-business">
-        <BusinessSub/>
-        < BusiPara/>
-         <BusinessSub/>
-        < BusiPara/>
-    </div>);
+    return React.createElement('div',{className:"width-full-business"},
+     <BusinessSub/>,
+        < BusiPara/>,
+         <BusinessSub/>,
+        < BusiPara/>,
+    );
 };
+
+//const FeaturesSubUnder=()=>{
+  //  return(<div>
+    //    <FeaturesSub/>
+      //  <Style/>
+        //<Contact/>
+        //<Theme/>
+        //<Support/>
+        //<Policy/>
+        //<Newsletter/>
+    //</div>);
+//};
+
 const FeaturesSubUnder=()=>{
-    return(<div>
-        <FeaturesSub/>
-        <Style/>
-        <Contact/>
-        <Theme/>
-        <Support/>
-        <Policy/>
-        <Newsletter/>
-    </div>);
+    return React.createElement('div',{}, <FeaturesSub/>,
+        <Style/>,
+        <Contact/>,
+        <Theme/>,
+        <Support/>,
+        <Policy/>,
+        <Newsletter/>)
 };
-const NewsSubUnder=()=>{return(<div>
-        <NewsSub/>
-        <News/>
-        <Career/>
-        <Technology/>
-        <Startups/>
-        <Gadgets/>
-        <Inspiration/>
-</div>)};
-const WhatsAppFullUnder=()=>{return(<div>
-        <WhatsAppFull/>
-        <YoutubeFull/>
-        <WebsiteFull/>
-        <NewsLetterFull/>
-</div>)};
 
+//const NewsSubUnder=()=>{return(<div>
+  //      <NewsSub/>
+    //    <News/>
+      //  <Career/>
+       // <Technology/>
+        //<Startups/>
+        //<Gadgets/>
+       // <Inspiration/>
+//</div>)};
 
-const WhatsAppFull=()=>{return(<div className="wathsapp-flex">
-    <WhatsAppIcon/>
-    <WhatsAppH/>
-</div>);};
+const NewsSubUnder=()=>{
+    return React.createElement('div',{}, <NewsSub/>,
+        <News/>,
+        <Career/>,
+        <Technology/>,
+        <Startups/>,
+        <Gadgets/>,
+        <Inspiration/>);
+}
+//const WhatsAppFullUnder=()=>{return(<div>
+  //      <WhatsAppFull/>
+  //      <YoutubeFull/>
+  //      <WebsiteFull/>
+  //      <NewsLetterFull/>
+//</div>)};
 
-     const YoutubeFull=()=>{return(<div className="flex-youtube-icon">
-         <YoutubeIcon/>
-         <YoutubeH/>
-     </div>)};
+const WhatsAppFullUnder=()=>{
+    return React.createElement('div',{}, <WhatsAppFull/>,
+        <YoutubeFull/>,
+        <WebsiteFull/>,
+        <NewsLetterFull/>);
+};
 
+//const WhatsAppFull=()=>{return(<div className="wathsapp-flex">
+  //  <WhatsAppIcon/>
+    //<WhatsAppH/>
+//</div>);};
+
+const WhatsAppFull=()=>{
+    return React.createElement('div',{className:"wathsapp-flex"}, <WhatsAppIcon/>,
+    <WhatsAppH/>)
+};
+
+//const YoutubeFull=()=>{return(<div className="flex-youtube-icon">
+  //       <YoutubeIcon/>
+    //     <YoutubeH/>
+    // </div>)};
+
+ const YoutubeFull=()=>{
+     return React.createElement('div',{className:"flex-youtube-icon"},<YoutubeIcon/>,
+         <YoutubeH/>);
+ };   
+
+//const WebsiteFull=()=>{return(<div className="flex-website">
+//         <WebsiteIcon/>
+//         <Website/>
+//     </div>);};
     
+const WebsiteFull=()=>{
+    return React.createElement('div',{className:"flex-website"}, <WebsiteIcon/>,
+         <Website/>)
+};
 
-     const WebsiteFull=()=>{return(<div className="flex-website">
-         <WebsiteIcon/>
-         <Website/>
-     </div>);};
-    
-     const NewsLetterFull=()=>{return(<div className="NewsLetter-flex">
-         <NewsLetterIcon/>
-         <NewsLetterH/>
-     </div>);};
+
+  //   const NewsLetterFull=()=>{return(<div className="NewsLetter-flex">
+    //     <NewsLetterIcon/>
+      //   <NewsLetterH/>
+     //</div>);};
      
+ const NewsLetterFull=()=>{
+     return React.createElement('div',{className:"NewsLetter-flex"},<NewsLetterIcon/>,
+         <NewsLetterH/>);
+ };
+
 
      const HotTopicsFull=()=>{return(<div>
          <HotTopics/>
          <HotTopicsPara/>
      </div>);};
-const FullLast=()=>{return(<div className="margin-top-color">
-    <div className="margin-width-last-box">
-        <WebSiterights/>
-    <FourSidesFull/>
-    </div>
-</div>);};
+//const FullLast=()=>{return(<div className="margin-top-color">
+  //  <div className="margin-width-last-box">
+    //    <WebSiterights/>
+    //<FourSidesFull/>
+    //</div>
+//</div>);};
 
+const FullLast=()=>{
+    return React.createElement('div',{className:"margin-top-color"},React.createElement('div',{className:"margin-width-last-box"},  <WebSiterights/>,
+    <FourSidesFull/>))
+};
 
-const FourSidesFull=()=>{return(<div className="flex-sideLast">
-      <English/>
-      <Terms/>
-      <Privacy/>
-      <Cookies/>
-</div>);};
+//const FourSidesFull=()=>{return(<div className="flex-sideLast">
+  //    <English/>
+    //  <Terms/>
+    //  <Privacy/>
+    //  <Cookies/>
+//</div>);};
+
+const FourSidesFull=()=>{
+    return React.createElement('div',{className:"flex-sideLast"}, <English/>,
+      <Terms/>,
+      <Privacy/>,
+      <Cookies/>);
+};

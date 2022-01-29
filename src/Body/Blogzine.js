@@ -1,3 +1,4 @@
+import React from 'react';
 export const Blogzine=()=>{
     return(<>
     <div>
@@ -27,16 +28,23 @@ const BlogzineIcon=()=>{
 const BlogzineTheme=()=>{
     return<i class="fas fa-quote-right"></i>;
 };
+//const BlogzineCenter=()=>{
+  //  return(<>
+    //<div className="BlogCenter">
+      //  <Home/>
+       // <Pages/>
+       // <Lifestyle/>
+       // <Components/>
+    //</div>
+    //</>);
+//};
+
 const BlogzineCenter=()=>{
-    return(<>
-    <div className="BlogCenter">
-        <Home/>
-        <Pages/>
-        <Lifestyle/>
-        <Components/>
-    </div>
-    </>);
-};
+    return React.createElement('div',{className:"BlogCenter"}, <Home/>,
+        <Pages/>,
+        <Lifestyle/>,
+        <Components/>)
+}
 
 const Home=()=>{
 return <p>Home</p>
@@ -63,13 +71,18 @@ const Subscribe=()=>{
 
     </>);
 };
+//const SubIcon=()=>{
+  //  return(<>
+    //<div>
+   //    <SearchIcon/>
+     //  <AlignIcon/>
+    //</div>
+    //</>);
+//};
+
 const SubIcon=()=>{
-    return(<>
-    <div>
-       <SearchIcon/>
-       <AlignIcon/>
-    </div>
-    </>);
+    return React.createElement('div',{}, <SearchIcon/>,
+       <AlignIcon/>);
 };
 
 const SearchIcon=()=>{
